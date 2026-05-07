@@ -1,0 +1,29 @@
+{
+  "system_name": "LLM-only",
+  "table2": {
+    "B-P": 98.4,
+    "B-R": 100.0,
+    "B-F1": 99.2,
+    "Type": 100.0,
+    "F-Attach": 99.2,
+    "Compl": 87.7,
+    "Edit": 0.209,
+    "Ready": 83.8
+  },
+  "table4": {
+    "Parse": 100.0,
+    "Symbol": 74.4,
+    "Retrieval": 77.0,
+    "Ready": 83.8
+  },
+  "detail": {
+    "gold_count": 126,
+    "pred_count": 128,
+    "matched_count": 126,
+    "missed": [],
+    "false_positives": [
+      "Example 1.1",
+      "Example 3.4"
+    ]
+  }
+}

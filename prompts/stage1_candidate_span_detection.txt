@@ -1,0 +1,37 @@
+You are given OCR-derived blocks from a mathematical page.
+
+Your task is to identify theorem-like units that can serve as downstream formalization inputs.
+
+A theorem-like unit may be one of:
+- definition
+- theorem
+- lemma
+- proposition
+- corollary
+- example
+- other theorem-like mathematical statement
+
+Important rules:
+1. Preserve theorem boundaries conservatively.
+2. Do not merge proof text into theorem statements.
+3. Include a displayed formula only if it belongs to the theorem statement itself.
+4. Exclude surrounding exposition unless it is clearly part of the theorem-like unit.
+5. Prefer under-merging to over-merging when uncertain.
+6. Do not invent missing blocks.
+7. Output only valid JSON.
+
+Return a JSON array.
+For each predicted unit, return:
+- page_id
+- source_blocks
+
+Output format:
+[
+  {
+    "page_id": "p021",
+    "source_blocks": [14, 15, 16, 18]
+  }
+]
+
+OCR blocks:
+{{OCR_BLOCKS}}

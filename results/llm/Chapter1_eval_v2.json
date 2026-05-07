@@ -1,0 +1,33 @@
+{
+  "system_name": "LLM-only",
+  "table2": {
+    "B-P": 95.5,
+    "B-R": 100.0,
+    "B-F1": 97.7,
+    "Type": 100.0,
+    "F-Attach": 100.0,
+    "Compl": 87.7,
+    "Edit": 0.209,
+    "Ready": 90.6
+  },
+  "table4": {
+    "Parse": 100.0,
+    "Symbol": 71.9,
+    "Retrieval": 100.0,
+    "Ready": 90.6
+  },
+  "detail": {
+    "gold_count": 126,
+    "pred_count": 132,
+    "matched_count": 126,
+    "missed": [],
+    "false_positives": [
+      "Example 1.1",
+      "Example 1.105",
+      "Example 1.105 (i)",
+      "Example 1.105 (i) Distribution Function",
+      "Example 1.105 (iii)",
+      "Example 3.4(iv)"
+    ]
+  }
+}

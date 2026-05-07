@@ -1,0 +1,26 @@
+{
+  "system_name": "Rule-based",
+  "table2": {
+    "B-P": 100.0,
+    "B-R": 100.0,
+    "B-F1": 100.0,
+    "Type": 84.9,
+    "F-Attach": 100.0,
+    "Compl": 93.9,
+    "Edit": 0.154,
+    "Ready": 88.7
+  },
+  "table4": {
+    "Parse": 100.0,
+    "Symbol": 66.0,
+    "Retrieval": 100.0,
+    "Ready": 88.7
+  },
+  "detail": {
+    "gold_count": 126,
+    "pred_count": 126,
+    "matched_count": 126,
+    "missed": [],
+    "false_positives": []
+  }
+}

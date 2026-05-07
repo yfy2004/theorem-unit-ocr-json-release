@@ -1,0 +1,43 @@
+# Python environments
+mineru_env/
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Binary / large files
+*.dll
+*.pyd
+*.so
+*.dylib
+*.exe
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Local/system files
+.DS_Store
+.ipynb_checkpoints/
+
+# Copyright-sensitive or private data
+Klenke14_revised/
+real_data/
+gold/
+annotations/
+outputs/
+predictions/
+paper/
+*.pdf
+
+# Local paths / logs
+*.log
+
+# Secrets
+.env
+.env.*
+*.key

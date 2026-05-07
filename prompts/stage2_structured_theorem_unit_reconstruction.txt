@@ -1,0 +1,42 @@
+You are given a candidate theorem-like span extracted from OCR-derived mathematical page blocks.
+
+Your task is to reconstruct a formalization-ready theorem unit.
+
+Requirements:
+1. Predict the unit type using only this closed label set:
+   ["definition", "theorem", "lemma", "proposition", "corollary", "example", "other"]
+2. Recover the title if present.
+3. Reconstruct the theorem statement text with minimal normalization.
+4. Attach only formulas that belong to the theorem statement.
+5. Exclude proof text and unrelated exposition.
+6. Preserve source block provenance.
+7. Do not paraphrase, expand, or invent mathematical content.
+8. If uncertain, be conservative.
+9. Output only valid JSON.
+
+Return exactly one JSON object with the following fields:
+- doc_id
+- page_id
+- unit_id
+- unit_type
+- title
+- statement_text
+- formula_spans
+- source_blocks
+- reading_order
+- confidence_score
+
+Field constraints:
+- unit_type must be one of the allowed labels
+- source_blocks must be a list of integers
+- reading_order must contain only integers from source_blocks
+- formula_spans must be a list; each formula span should contain:
+  - formula_id
+  - text
+  - source_block
+- confidence_score must be a number between 0 and 1
+
+Document id: {{DOC_ID}}
+Page id: {{PAGE_ID}}
+Candidate blocks:
+{{CANDIDATE_BLOCKS}}
