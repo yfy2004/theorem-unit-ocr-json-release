@@ -1,65 +1,17 @@
-# Theorem Unit Benchmark Starter Kit v2
+# Theorem Unit Construction from Noisy OCR JSON
 
-This starter kit helps you run a pilot version of the OCR JSON -> theorem unit benchmark described in your NeurIPS 2026 E&D draft.
+This anonymized repository accompanies a NeurIPS 2026 Evaluations and Datasets Track submission on theorem unit construction from noisy OCR JSON for mathematical auto-formalization.
 
-## What is included
+## Contents
 
-- Pilot annotation CSV templates
-- Prompt templates for stage 1 and stage 2
-- CSV -> gold JSONL conversion script
-- LLM raw-output postprocessing for stage 1 and stage 2
-- Evaluation scripts for structure, integrity, and downstream readiness
-- Table export scripts for Table 1/2/3/4/8/9/10/11
-- A full pipeline runner
-- A paper macro filler for synchronizing key numbers into `paper/main.tex`
+- `scripts/`: evaluation, metric computation, table generation, and utility scripts.
+- `prompts/`: prompt templates and postprocessing rules for theorem-unit construction.
+- `results/`: lightweight example result files and table-generation examples.
 
-## Suggested first run
+## Copyright and data availability
 
-1. Fill `annotations/pilot/pilot_units_annotation_sheet.csv`
-2. Convert it into `data/gold/gold_units_test_pilot.jsonl`
-3. Generate mock predictions with `scripts/make_mock_predictions.py`
-4. Run `scripts/eval_all.py`
-5. Export tables with `scripts/export_tables.py`
+The benchmark is based on a third-party copyrighted textbook. This repository does not redistribute the original textbook PDF, page images, or verbatim textbook text. It provides code, prompt templates, evaluation utilities, and lightweight example files. Users who have legal access to the source document may regenerate OCR-derived inputs following the instructions in the paper.
 
-## Minimal commands
+## Notes for reviewers
 
-### 1. Convert pilot CSV to gold JSONL
-
-```bash
-python scripts/csv_to_gold_jsonl.py   --input_csv annotations/pilot/pilot_units_annotation_sheet.csv   --output_jsonl data/gold/gold_units_test_pilot.jsonl   --doc_id probability_theory
-```
-
-### 2. Make mock predictions
-
-```bash
-python scripts/make_mock_predictions.py   --gold data/gold/gold_units_test_pilot.jsonl   --output predictions/mock/pred_copy_gold_test_pilot.jsonl   --mode copy_gold
-```
-
-### 3. Evaluate a single system
-
-```bash
-python scripts/eval_all.py   --gold data/gold/gold_units_test_pilot.jsonl   --pred predictions/mock/pred_copy_gold_test_pilot.jsonl   --output outputs/metrics/mock_copy_gold_test_all.json   --system_name "Mock copy-gold"
-```
-
-## Expected OCR JSON naming
-
-The scripts assume page OCR files follow:
-
-- `data/ocr_json/p021.json`
-- `data/ocr_json/p022.json`
-- etc.
-
-Each OCR JSON should contain one of the following top-level block arrays:
-
-- `blocks`
-- `items`
-- `layout_blocks`
-- `elements`
-
-Each block should ideally have `block_id` or `id`. If not, the scripts fall back to positional indexing.
-
-## Notes
-
-- The kit prioritizes stable execution over sophisticated modeling.
-- The downstream readiness script currently uses a fixed proxy, which you can later replace with your real Structured Theorem Parser.
-- You should freeze OCR inputs before large-scale annotation.
+This repository is anonymized for double-blind review. It excludes source PDFs, page images, full OCR text, and full gold theorem statements where redistribution could conflict with third-party copyright restrictions.

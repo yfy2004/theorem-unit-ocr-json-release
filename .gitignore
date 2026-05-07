@@ -41,3 +41,4 @@ paper/
 .env
 .env.*
 *.key
+paper_text.txt
